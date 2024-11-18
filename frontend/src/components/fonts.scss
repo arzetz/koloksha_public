@@ -1,0 +1,25 @@
+$rgspb: Random Grotesque Spacious;
+$rgsts: Random Grotesque Standard Semibold;
+$rgst: Random Grotesque Standard;
+$rgsp: Random Grotesque Spacious;
+
+
+@font-face {
+  font-family: $rgspb; /* Задайте имя для вашего шрифта */
+  src: url("../fonts/RG-SpaciousBlackIt.woff2");
+}
+
+@font-face {
+  font-family: $rgsts; /* Задайте имя для вашего шрифта */
+  src: url("../fonts/RG-StandardSemibold.ttf");
+}
+
+@font-face {
+  font-family: $rgst; /* Задайте имя для вашего шрифта */
+  src: url("../fonts/RG-StandardRegularIt.ttf");
+}
+
+@font-face {
+  font-family: $rgsp; /* Задайте имя для вашего шрифта */
+  src: url("../fonts/RG-SpaciousRegular.woff2");
+}

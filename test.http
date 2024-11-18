@@ -1,0 +1,11 @@
+POST http://localhost:3000/place_order HTTP/1.1
+content-type: application/json
+
+{
+    "user name": "sample",
+    "phone number": "loli"
+}
+
+###
+
+GET http://0.0.0.0:82/

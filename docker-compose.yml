@@ -1,0 +1,44 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    env_file:
+    - .env
+    ports:
+    - 8082:8082
+    volumes:
+      - ./backend:/app
+    command: go run main.go
+  
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/app
+    command: /bin/sh -c "npm install && npm run build"
+
+  db:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - 5435:5432
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./frontend/build:/usr/share/nginx/html
+    depends_on:
+      - backend
+      - frontend
+      
+volumes:
+  postgres-db:
+  
