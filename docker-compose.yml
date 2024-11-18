@@ -22,9 +22,9 @@ services:
   db:
     image: postgres:alpine
     environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=kolasf0963
+      - POSTGRES_PASSWORD=0963aLeX$
+      - POSTGRES_DB=koloksha_orders
     ports:
       - 5435:5432
     volumes:

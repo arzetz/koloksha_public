@@ -14,10 +14,7 @@ import (
 var db *gorm.DB
 
 func init() {
-	dsn := fmt.Sprintf("host=db user=%s password=%s dbname=%s port=5432 sslmode=disable",
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"),
-		os.Getenv("DB_NAME"))
+	dsn := fmt.Sprintf("host=db user=kolasf0963 password=0963aLeX$ dbname=koloksha_orders port=5432 sslmode=disable")
 
 	var err error
 	db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{
