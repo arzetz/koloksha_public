@@ -30,20 +30,6 @@ services:
     volumes:
       - postgres-db:/var/lib/postgresql/data
 
-  certbot:
-    image: certbot/certbot
-    volumes:
-      - ./nginx/certbot/conf:/etc/letsencrypt
-      - ./nginx/certbot/www:/var/www/certbot
-    entrypoint: >
-      sh -c "trap exit TERM; 
-             certbot certonly --webroot --webroot-path=/var/www/certbot 
-             -d kolasf.ru -d www.kolasf.ru --email amel0820@mail.ru --agree-tos --non-interactive; 
-             while :; do sleep 6h & wait $${!}; done;"
-    depends_on:
-      - nginx
-    restart: unless-stopped  # Убедитесь, что контейнер перезапускается, если Certbot не завершился успешно
-
   nginx:
     image: nginx:latest
     ports:
@@ -60,7 +46,6 @@ services:
     depends_on:
       - backend
       - frontend
-    command: /bin/sh -c "until [ -f /etc/letsencrypt/live/kolasf.ru/fullchain.pem ]; do echo 'Waiting for certificates...'; sleep 5; done; nginx -g 'daemon off;'"
 
 volumes:
   postgres-db:
