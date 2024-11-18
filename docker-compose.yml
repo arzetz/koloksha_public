@@ -1,13 +1,13 @@
-version: '3.7'
+version: '3'
 
 services:
   backend:
     build:
       context: ./backend
     env_file:
-      - ./backend/.env
+    - ./backend/.env
     ports:
-      - 8082:8082
+    - 8082:8082
     volumes:
       - ./backend:/app
     command: go run main.go
@@ -36,12 +36,11 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/certbot/conf:/etc/letsencrypt
-      - ./nginx/certbot/www:/var/www/certbot
+      - /etc/letsencrypt:/etc/letsencrypt  # Монтируем только сертификаты
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - ./frontend/build:/usr/share/nginx/html
     environment:
-      - NGINX_HOST=kolasf.ru
+      - NGINX_HOST=koloksha.ru
       - NGINX_EMAIL=amel0820@mail.ru
     depends_on:
       - backend
