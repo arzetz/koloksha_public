@@ -24,6 +24,7 @@ body {
 }
 
 .video_div {
+  overflow: hidden;
   position: relative;
   margin-top: 10%;
   text-align: center;
@@ -55,6 +56,7 @@ body {
   }
 }
 .overlay-content {
+  overflow: hidden;
   background: #ffffffe6;
   position: relative;
   padding: 25px;
@@ -99,7 +101,7 @@ main {
 
 footer {
   
- 
+ overflow: hidden;
   .footer_bg {
     background-image: url('../images/footer_back.png');
     background-color: #d6d6d6;
@@ -194,6 +196,7 @@ p {
 
 /*Стили контейнеров*/
 div {
+  overflow: hidden;
   &.header {
     margin-top: 65px;
   }
@@ -308,12 +311,14 @@ div {
 }
 
 .bg-container {
+  overflow: hidden;
   position: relative;
   width: 100%;
   padding-bottom: 23%;
 }
 
 .bg-image {
+  overflow: hidden;
   position: absolute;
   z-index: -1;
   width: 100%;
