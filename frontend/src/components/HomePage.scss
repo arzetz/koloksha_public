@@ -179,7 +179,7 @@ p {
     font-family: $rgst;
   }
   &.advantages_p {
-    font-size: 50px;
+    font-size: 48px;
     color: #ffffff;
     font-family: $rgsp;
   }
@@ -429,7 +429,7 @@ video {
       font-family: $rgst;
     }
     &.advantages_p {
-      font-size: 46px;
+      font-size: 42px;
       color: #ffffff;
       font-family: $rgsp;
     }
@@ -453,7 +453,8 @@ video {
       margin-top: 120px;
     }
     &.historybar {
-      margin-right: 4%;
+      margin-right: 2%;
+      width: 1150px;
     }
     &.inner_product {
       span {
@@ -509,7 +510,7 @@ video {
       font-family: $rgst;
     }
     &.advantages_p {
-      font-size: 46px;
+      font-size: 40px;
     }
     &.form_p{
       font-size: 24px;
@@ -613,7 +614,7 @@ video {
       font-size: 28px;
     }
     &.advantages_p {
-      font-size: 44px;
+      font-size: 38px;
     }
   }
   /*<<--------->>*/
@@ -647,6 +648,10 @@ video {
     &.advantages_p {
       margin-left: 5%;
       width: 60%;
+    }
+    &.historybar {
+      margin-right: 2%;
+      width: 950px;
     }
   }
 
@@ -701,7 +706,7 @@ video {
       font-size: 25px;
     }
     &.advantages_p {
-      font-size: 40px;
+      font-size: 36px;
     }
     &.form_p{
       font-size: 22px;
@@ -777,6 +782,10 @@ video {
     }
     .phone_block{
       margin-top: 5%;
+    }
+    &.historybar {
+      margin-right: 2%;
+      width: 950px;
     }
   }
 
@@ -869,7 +878,7 @@ video {
 
   .logo_img {
     margin-left: 26%;
-    margin-top: 30%;
+    margin-top: 28%;
   }
   .historybar_image {
     width: 194px;
@@ -907,6 +916,10 @@ video {
     &.background-line {
       height: 180px; /* Высота линии */
     }
+    &.historybar {
+      margin-right: 2%;
+      width: 950px;
+    }
   }
   hr {
     &.advantages {
@@ -932,14 +945,34 @@ video {
 
 @media (max-width: 880px) {
   p {
+    &.p_1{
+      font-size: 20px;
+    }
+    &.p_2{
+      font-size: 20px;
+    }
     &.advantages_p {
       font-size: 24px;
     }
+    &.phone_block_p {
+    font-size: 22px;
+  }
+  &.form_p{
+    font-size: 20px;
+    margin-bottom: 25px;
+    margin-left: 35px;
+  }
   }
   h1 {
     &.advantages {
       padding-top: 80px;
       font-size: 38px;
+    }
+    &.form_h1{
+      margin-top: 40px;
+      margin-bottom: 7px;
+      margin-left: 35px;
+      font-size: 28px;
     }
   }
 
@@ -960,6 +993,14 @@ video {
     &.background-line {
       height: 150px; /* Высота линии */
     }
+    &.historybar {
+      margin-right: 2%;
+      width: 1050px;
+    }
+    &.form_div{
+      width: 300px;
+      height: 410px;
+    }
   }
   .advantages_image {
     width: 50%;
@@ -968,6 +1009,39 @@ video {
   video {
     border-radius: 20px;
   }
+
+  footer {
+    .footer_bg {
+      background-size: 100% 100%;
+      height: 500px;
+    }
+    .form {
+      gap: 12%;
+    }
+  }
+  .inner_label{
+    width: 230px;
+    height: 40px;
+    margin-bottom: 17px;
+    padding-left: 10px;
+    font-size: 22px;
+  }
+  
+  .inner_label::placeholder {
+    font-size: 22px;
+  }
+
+  .form-button {
+    width: 245px;
+    height: 40px;
+     font-size: 22px; 
+     margin-left: 8.2%;
+     margin-top: 8px;
+   }
+   
+   .phone_block{
+     margin-top: 4%;
+   }
 }
 
 @media (max-width: 768px) {
@@ -1023,7 +1097,7 @@ video {
     }
     &.about_us_inner {
       width: 100%;
-      height: 150px;
+      height: 160px;
       margin-bottom: 80px;
       display: flex;
       text-align: left;
@@ -1033,7 +1107,7 @@ video {
       justify-content: left;
     }
     &.outer_product {
-      margin-top: 65px;
+      margin-top: 40px;
     }
     &.inner_product {
       span {
@@ -1051,6 +1125,10 @@ video {
     &.advantages_inner {
       padding-bottom: 40px;
     }
+    &.historybar {
+      margin-right: 0px;
+      width: 0px;
+    }
   }
   .flex_small {
     width: 100%;
@@ -1059,7 +1137,7 @@ video {
     margin-top: 168px;
   }
   .logo_small {
-    height: 45px;
+    height: 65px;
   }
   .logo_img {
     height: 27px;
@@ -1136,7 +1214,7 @@ video {
       }
     }
     &.outer_product {
-      margin-top: 55px;
+      margin-top: 30px;
     }
     &.advantages_image_div {
       width: 30%;
@@ -1292,12 +1370,14 @@ video {
   .p_2 {
     margin-right: 5px;
   }
+  .i_1{width: 100px;
+    height: 100px;}
   .i_2 {
     margin-right: 10px;
     margin-left: 15px;
     margin-top: 8px;
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
   }
   hr {
     &.advantages {
@@ -1305,5 +1385,44 @@ video {
       width: 220px;
       height: 4px;
     }
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    &.about_us {
+      margin-top: 50px;
+      font-size: 24px;
+    }
+    &.products {
+      margin-top: 10px;
+      font-size: 26px;
+    }
+    &.advantages {
+      padding-top: 20px;
+      font-size: 24px;
+    }
+  }
+  p {
+    &.about_us {
+      margin-top: 15px;
+      font-size: 11px;
+    }
+    &.advantages_p {
+      font-size: 12px;
+    }
+    &.header{
+      font-size: 22px;
+    }
+  }
+  div.outer_product {
+    margin-top: 25px;
+  }
+  span.header {
+    font-size: 28px;
+  }
+  .logo_img {
+    margin-left: 26%;
+    margin-top: 25%;
   }
 }
