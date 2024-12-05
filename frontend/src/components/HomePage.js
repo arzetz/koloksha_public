@@ -34,6 +34,7 @@ function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [fadeOut, setFadeOut] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [phone, setPhone] = useState(""); 
 
   const handleImageClick = (product) => {
     setSelectedProduct(product); // Устанавливаем выбранный продукт
@@ -123,8 +124,17 @@ function HomePage() {
       alert('Ошибка при отправке данных. Попробуйте еще раз.');
     }
   };
-
-
+  
+    const handleInputChange = (event) => {
+      const inputValue = event.target.value;
+  
+      // Удаляем все символы, кроме цифр
+      const filteredValue = inputValue.replace(/[^0-9+]/g, "");
+  
+      // Добавляем "+" в начало
+      setPhone(`${filteredValue}`);
+    };
+    
   return (
     <>
       <body>
@@ -438,6 +448,12 @@ function HomePage() {
                         placeholder="Ваш телефон"
                         required
                         className="inner_label"
+                        value={phone}
+                        maxlength="14"
+                        minlength="12"
+                        pattern="\+[0-9]"
+                        onFocus={() => setPhone('+')}
+                        onChange={handleInputChange}
                       />
                     </Form.Group>
                     <Button
