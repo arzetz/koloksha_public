@@ -33,6 +33,7 @@ import "aos/dist/aos.css";
 function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [fadeOut, setFadeOut] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleImageClick = (product) => {
     setSelectedProduct(product); // Устанавливаем выбранный продукт
@@ -80,11 +81,19 @@ function HomePage() {
     window.location.href = `mailto:${"mail@koloksha.ru"}`;
   };
 
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const name = document.getElementById('formName').value;
     const phone = document.getElementById('formPhone').value;
+
+    if (!isChecked) {
+      alert("Пожалуйста, согласитесь с условиями!");
+      return;
+    }
 
     const formData = {
       name: name,
@@ -415,7 +424,7 @@ function HomePage() {
                     мы отправим Вам цены,<br></br> условия и сроки поставки
                   </p>
                   <div className="centered-elements">
-                    <Form.Group controlId="formName">
+                    <Form.Group controlId="formName" className="form_inner_label">
                       <Form.Control
                         type="text"
                         placeholder="Ваше имя"
@@ -423,7 +432,7 @@ function HomePage() {
                         className="inner_label"
                       />
                     </Form.Group>
-                    <Form.Group controlId="formPhone">
+                    <Form.Group controlId="formPhone" className="form_inner_label">
                       <Form.Control
                         type="tel"
                         placeholder="Ваш телефон"
@@ -443,7 +452,8 @@ function HomePage() {
                         type="checkbox"
                         id="custom-checkbox"
                         label="Согласен с условиями"
-                        className="custom-checkbox" // Класс для стилизации
+                        className="custom-checkbox"
+                        onChange={handleCheckboxChange}
                       />
                     </Form.Group>
                   </div>

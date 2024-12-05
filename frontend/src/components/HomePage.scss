@@ -406,6 +406,24 @@ video {
   color: #DDDDDD;
 }
 
+input:focus, textarea:focus {
+  outline: none;  
+  border: 1px solid #6c6c6c;
+  box-shadow: 0 0 4px rgba(42, 44, 47, 0.5);
+}
+
+.custom-checkbox{
+  margin-top: 20px;
+}
+.form-check-input{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.form-check-label{
+  font-size: 20px;
+}
+
 @media (max-width: 1780px) {
   h1 {
     &.about_us {
@@ -1000,6 +1018,7 @@ video {
     &.form_div{
       width: 300px;
       height: 410px;
+     
     }
   }
   .advantages_image {
@@ -1028,7 +1047,7 @@ video {
   }
   
   .inner_label::placeholder {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .form-button {
@@ -1045,6 +1064,40 @@ video {
 }
 
 @media (max-width: 768px) {
+  
+  .custom-checkbox{
+    margin-top: 10px;
+  }
+  .form-check-input{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+  }
+  .form-check-label{
+    font-size: 16px;
+  }
+
+  .form-button {
+    width: 210px;
+    height: 33px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .form_inner_label{
+    text-align: left;
+    margin-left: 20px;
+  }
+  .inner_label::placeholder {
+    font-size: 18px;
+  }
+  .inner_label{
+    width: 200px;
+    height: 33px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    font-size: 18px;
+    text-align: left;
+  }
   .bg-container {
     padding-bottom: 0%;
   }
@@ -1067,6 +1120,17 @@ video {
     &.advantages_p {
       font-size: 20px;
     }
+    &.phone_block_p{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    &.form_p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+    
   }
   h1 {
     &.about_us {
@@ -1080,6 +1144,12 @@ video {
     &.advantages {
       padding-top: 80px;
       font-size: 36px;
+    }
+    &.form_h1{
+      margin-top: 20px;
+      margin-bottom: 5px;
+      margin-left: 20px;
+      font-size: 24px;
     }
   }
 
@@ -1129,6 +1199,18 @@ video {
       margin-right: 0px;
       width: 0px;
     }
+    &.form_div{
+      margin-left: auto;
+      margin-right: auto;
+      order: 1;
+      width: 260px;
+    height: 320px;
+    }
+    &.phone_block{
+      order: 0;
+      margin-top: 2%;
+      margin-bottom: 5%;
+    }
   }
   .flex_small {
     width: 100%;
@@ -1174,10 +1256,16 @@ video {
   }
   footer {
     .footer_bg {
-      background-size: 100% 100%;
-      height: 350px;
+      background-size: 100% 100%; 
+      flex-direction: column;
+      height: 551px;
+      background-size: 150% 100%;
     }
+    .form {
+      gap: 12%;
+      flex-direction: column; 
   }
+}
 }
 
 @media (max-width: 681px) {
