@@ -453,7 +453,6 @@ function HomePage() {
                         pattern="^\+[0-9]{8,14}$"
                         onFocus={() => setPhone('+')}
                         onChange={handleInputChange}
-                        onBlur={() => setPhone('')}
                       />
                     </Form.Group>
                     <Button
