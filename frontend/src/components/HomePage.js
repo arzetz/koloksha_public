@@ -449,11 +449,11 @@ function HomePage() {
                         required
                         className="inner_label"
                         value={phone}
-                        maxlength="14"
-                        minlength="12"
-                        pattern="\+[0-9]"
+                        maxLength="15"
+                        pattern="^\+[0-9]{8,14}$"
                         onFocus={() => setPhone('+')}
                         onChange={handleInputChange}
+                        onBlur={() => setPhone('')}
                       />
                     </Form.Group>
                     <Button
